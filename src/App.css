@@ -40,6 +40,10 @@
     border: none;
 }
 
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 svg {
     width: 20px;
 }
@@ -116,6 +120,36 @@ svg {
         min-width: 8.5rem;
         font-size: 15px;
     }
+
+    .card-manage .card-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-link {
+        position: relative;
+        display: inline-block;
+    }
+
+    .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #40b884;
+        transition: width 0.3s ease;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
 }
 
 .bg-image {
