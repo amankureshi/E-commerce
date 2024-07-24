@@ -4,7 +4,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg  py-3 shadow-sm fixed-top">
         <div className="container">
-          <a className="h4 text-decoration-none" href="#">
+          <a className="h4 text-decoration-none mt-1" href="#">
             Armanee
           </a>
           <button

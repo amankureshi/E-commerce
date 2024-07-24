@@ -44,6 +44,10 @@
     box-shadow: none;
 }
 
+.navbar-toggler-icon {
+    filter: brightness(0) saturate(100%) invert(55%) sepia(29%) saturate(1523%) hue-rotate(113deg) brightness(90%) contrast(88%);
+}
+
 svg {
     width: 20px;
 }
