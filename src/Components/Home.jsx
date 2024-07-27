@@ -2,7 +2,7 @@ import React from "react";
 import Products from "./Products";
 const Home = () => {
   return (
-    <div className="hero-section mt-5 pt-4" id="home">
+    <div className="hero-section" id="home">
       <div className="bg-dark text-white bg-image">
         <img
           src="https://img.freepik.com/premium-photo/cute-girl-posing-shopping-mall_355000-3755.jpg?w=826"

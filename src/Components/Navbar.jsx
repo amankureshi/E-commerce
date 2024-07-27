@@ -1,12 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg  py-3 shadow-sm fixed-top">
+      <nav className="navbar navbar-expand-lg  py-3 shadow-sm ">
         <div className="container">
-          <a className="h4 text-decoration-none mt-1" href="#">
+          <NavLink className="h4 text-decoration-none mt-1" to="/">
             Armanee
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,28 +22,36 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#home">
+                <NavLink className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#">
+                <NavLink className="nav-link " aria-current="page" to="/about">
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#products">
+                <NavLink
+                  className="nav-link "
+                  aria-current="page"
+                  to="/products"
+                >
                   Products
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#footer">
+                <NavLink
+                  className="nav-link "
+                  aria-current="page"
+                  to="/contact"
+                >
                   Contact us
-                </a>
+                </NavLink>
               </li>
             </ul>
             <form className="d-flex gap-1">
-              <a href="" className="btn btn-outline-dark text-white">
+              <NavLink to="/login" className="btn btn-outline-dark text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -61,8 +70,11 @@ const Navbar = () => {
                   />
                 </svg>
                 Login
-              </a>
-              <a href="" className="btn btn-outline-dark text-white">
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="btn btn-outline-dark text-white"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -75,9 +87,9 @@ const Navbar = () => {
                   <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
                 </svg>{" "}
                 Register
-              </a>
+              </NavLink>
 
-              <a href="" className="btn btn-outline-dark text-white">
+              <NavLink to="/cart" className="btn btn-outline-dark text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -89,7 +101,7 @@ const Navbar = () => {
                   <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
                 </svg>
                 Cart
-              </a>
+              </NavLink>
             </form>
           </div>
         </div>

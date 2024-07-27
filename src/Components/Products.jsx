@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import { NavLink } from "react-router-dom";
+import Product_card from "./Product_card";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -24,7 +28,22 @@ const Products = () => {
   }, []);
 
   const Loading = () => {
-    return <>Loading...</>;
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+      </>
+    );
   };
 
   const filterProduct = (res) => {
@@ -70,8 +89,8 @@ const Products = () => {
         {filter.map((products) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
-                <div className="card h-100 text-center py-4">
+              <div className="col-md-3 mb-4 col-lg-3 col-sm-6">
+                <div className="card h-100 text-center py-4" key={products.id}>
                   <img
                     src={products.image}
                     className="card-img-top"
@@ -82,9 +101,12 @@ const Products = () => {
                       {products.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text">${products.price}</p>
-                    <a href="#" className="btn btn-light">
+                    <NavLink
+                      to={`/products/${products.id}`}
+                      className="btn btn-light"
+                    >
                       Buy Now
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
