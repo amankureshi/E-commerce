@@ -1,12 +1,10 @@
 // For add item to cart
-
-export const addCart = () => {
+export const addCart = (product) => {
   return {
-    type: "ADITEM",
+    type: "ADDITEM",
     payload: product,
   };
 };
-
 //Fot Delete item From Cart
 export const delCart = (product) => {
   return {

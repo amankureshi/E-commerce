@@ -2,11 +2,18 @@ import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink, useParams } from "react-router-dom";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
 
 const Product_card = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addCart(product));
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -46,10 +53,9 @@ const Product_card = () => {
         <div className="row">
           <div className="col-md-6">
             <img
+              className="product-image"
               src={product.image}
               alt={product.title}
-              height="400px"
-              width="400px"
             />
           </div>
           <div className="col-md-6 col-sm-12 col-lg-6">
@@ -60,12 +66,18 @@ const Product_card = () => {
               <i className="fa fa-star"></i>
             </p>
             <h3 className="display-6 fw-bold my-4">${product.price}</h3>
-            <p className="lead">{product.discription}</p>
+            <p className="lead description-lead">{product.description}</p>
             <div className="add_card_btn d-flex gap-3">
-              <button className="btn btn-outline-dark text-white px-4 py-2">
+              <button
+                className="btn btn-outline-dark text-white px-4 py-2 product-btn"
+                onClick={() => addProduct(product)}
+              >
                 Add to Cart
               </button>
-              <NavLink to="/cart" className="btn btn-dark text-white px-4 py-2">
+              <NavLink
+                to="/cart"
+                className="btn btn-dark text-white px-4 py-2 product-btn"
+              >
                 Go to Cart
               </NavLink>
             </div>

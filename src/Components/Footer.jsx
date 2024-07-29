@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="container p-4">
             <div className="row">
               <div className="col-lg-6 col-md-12 mb-4">
-                <h5 className="mb-3">Armaneee</h5>
+                <h5 className="mb-3">Armanee</h5>
                 <p>
                   Your E-commerce Website. All rights reserved. <br />
                   We offer the best products at the best prices. <br />
