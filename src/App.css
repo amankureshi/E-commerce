@@ -10,6 +10,10 @@
     scroll-margin: 2rem;
 }
 
+body {
+    background: rgba(249, 246, 246, 0.66);
+}
+
 /* <--------- Navbar-------> */
 .navbar {
     background-color: #f0f4f9;
@@ -88,6 +92,8 @@ svg {
 .footer {
     background-color: #152942;
     color: #fff;
+    position: relative;
+    bottom: 0;
 }
 
 .table tbody td {
@@ -110,12 +116,77 @@ svg {
     background-color: #40b884;
     border: none;
     color: #fff;
+    padding: 10px 20px;
+    border-radius: 7px;
 }
 
 .product-image {
     width: 20rem;
     margin: 0 auto;
     display: block;
+}
+
+.cart_image {
+    width: 5%;
+}
+
+
+
+.bg-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.1));
+}
+
+/*----- Registration-Form -----*/
+
+.regi-btn {
+    background-color: #40b884;
+    border: none;
+}
+
+.form-card {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 5px;
+}
+
+.custom-width {
+    width: 40%;
+    max-width: 490px;
+}
+
+.description-lead {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* About-Image */
+.about-image {
+    width: 100%;
+}
+
+
+
+.table tbody td {
+    background-color: none;
+}
+
+.tab-btn.active {
+    background-color: #19343d;
 }
 
 @media (max-width: 786px) {
@@ -168,52 +239,32 @@ svg {
     .product-btn {
         font-size: 14px;
     }
-}
+
+    .cart_image {
+        width: 30%;
+    }
+
+    .form-card .card-body {
+        padding: 1rem !important;
+    }
+
+    .form-card .col a {
+        text-align: center;
+        font-size: 13px;
+    }
 
 
-.bg-image {
-    position: relative;
-    overflow: hidden;
-}
+    /* Form Card */
+    .card-body h2 {
+        font-size: 1.3rem;
+    }
 
-.bg-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to top,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.1));
-}
+    .custom-width {
+        width: 100%;
 
-/*----- Registration-Form -----*/
+    }
 
-.regi-btn {
-    background-color: #40b884;
-    border: none;
-}
-
-.form-card {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    border-radius: 5px;
-}
-
-.custom-width {
-    width: 80%;
-    max-width: 490px;
-}
-
-.description-lead {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* About-Image */
-.about-image {
-    width: 100%;
+    .remember-txt {
+        font-size: 13px;
+    }
 }

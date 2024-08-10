@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="container my-4">
-      <div className="row">
+      <div className="row d-flex  flex-row-">
         <div className="col-md-6">
           <img
             src="https://shorturl.at/AGOZc"

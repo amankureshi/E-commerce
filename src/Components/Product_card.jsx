@@ -7,24 +7,24 @@ import { addCart } from "../redux/action";
 
 const Product_card = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // Get the dispatch function
+
   const addProduct = (product) => {
-    dispatch(addCart(product));
+    dispatch(addCart(product)); // Dispatch the addCart action with the product
   };
 
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      console.log(response);
       setProduct(await response.json());
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return (
@@ -36,7 +36,6 @@ const Product_card = () => {
           <Skeleton height={50} width={300} />
           <Skeleton height={70} />
           <Skeleton height={25} width={150} />
-          {/* <Skeleton height={50} /> */}
           <Skeleton height={150} />
           <div className="d-flex gap-2">
             <Skeleton height={50} width={100} />
@@ -62,7 +61,7 @@ const Product_card = () => {
             <h4 className="text-uppercase text-black-50">{product.category}</h4>
             <h1 className="display-5">{product.title}</h1>
             <p className="lead">
-              Rating{product.rating && product.rating.rate}
+              Rating {product.rating && product.rating.rate}
               <i className="fa fa-star"></i>
             </p>
             <h3 className="display-6 fw-bold my-4">${product.price}</h3>

@@ -10,7 +10,7 @@ const Registration = () => {
               <div class="col-12 col-md-9 col-lg-7 col-xl-6 custom-width">
                 <div class="form-card">
                   <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">
+                    <h2 class="text-uppercase text-center mb-4">
                       Create an account
                     </h2>
 

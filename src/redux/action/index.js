@@ -6,9 +6,11 @@ export const addCart = (product) => {
   };
 };
 //Fot Delete item From Cart
-export const delCart = (product) => {
+export const delItem = (product) => {
+  console.log(product);
+
   return {
     type: "DELITEM",
-    playload: product,
+    payload: product,
   };
 };

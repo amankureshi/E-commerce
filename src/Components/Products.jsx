@@ -64,39 +64,40 @@ const Products = () => {
   };
 
   const ShowProducts = () => {
+    const [filter, setFilter] = useState(data);
+    const [activeFilter, setActiveFilter] = useState("All");
+
+    const handleFilter = (category) => {
+      setActiveFilter(category);
+      if (category === "All") {
+        setFilter(data);
+      } else {
+        const filtered = data.filter(
+          (product) => product.category === category
+        );
+        setFilter(filtered);
+      }
+    };
     return (
       <>
         <div className="top-tabs d-flex justify-content-center pb-4 mb-4">
-          <button
-            className="btn btn-outline-dark me-2 tab-btn"
-            onClick={() => setFilter(data)}
-          >
-            All
-          </button>
-          <button
-            className="btn btn-outline-dark me-2 tab-btn"
-            onClick={() => filterProduct("men's clothing")}
-          >
-            Men's Clothing
-          </button>
-          <button
-            className="btn btn-outline-dark me-2 tab-btn"
-            onClick={() => filterProduct("women's clothing")}
-          >
-            Women's Clothing
-          </button>
-          <button
-            className="btn btn-outline-dark me-2 tab-btn"
-            onClick={() => filterProduct("jewelery")}
-          >
-            Jewelery
-          </button>
-          <button
-            className="btn btn-outline-dark me-2 tab-btn"
-            onClick={() => filterProduct("electronics")}
-          >
-            Electronic
-          </button>
+          {[
+            "All",
+            "men's clothing",
+            "women's clothing",
+            "jewelery",
+            "electronics",
+          ].map((category) => (
+            <button
+              key={category}
+              className={`me-2 tab-btn ${
+                activeFilter === category ? "active" : "css"
+              }`}
+              onClick={() => handleFilter(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
         {filter.map((products) => {
           return (
