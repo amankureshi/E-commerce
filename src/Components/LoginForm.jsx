@@ -1,81 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
+
 const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission (e.g., send data to API)
+    console.log({ email, password });
+  };
+
   return (
-    <div className="container-sm">
-      <section class="py-5">
-        <div class="d-flex align-items-center ">
-          <div class="container-sm">
-            <div class="row d-flex justify-content-center align-items-center">
-              <div class="col-12 col-md-6 col-lg-6 col-xl-6 custom-width">
-                <div class="form-card">
-                  <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Login Form</h2>
-
-                    <form>
-                      <div data-mdb-input-init class="form-outline mb-4">
-                        <input
-                          type="text"
-                          id="form3Example1cg"
-                          class="form-control form-control-md"
-                          placeholder="Email address"
-                        />
-                      </div>
-
-                      <div data-mdb-input-init class="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="form3Example4cdg"
-                          class="form-control form-control-md"
-                          Repeat
-                          your
-                          password
-                          placeholder="Password"
-                        />
-                      </div>
-
-                      <div class="row mb-4">
-                        <div class="col d-flex justify-content-center">
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="form2Example31"
-                            />
-                            <label
-                              class="form-check-label remember-txt"
-                              for="form2Example31"
-                            >
-                              {" "}
-                              Remember me{" "}
-                            </label>
-                          </div>
-                        </div>
-
-                        <div class="col">
-                          <a href="#!">Forgot password?</a>
-                        </div>
-                      </div>
-
-                      <div class="d-flex justify-content-center">
-                        <button
-                          type="button"
-                          data-mdb-button-init
-                          data-mdb-ripple-init
-                          class="btn btn-success btn-lg regi-btn"
-                        >
-                          Login
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+    <section className="about account mt-3 mb-3">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-4">
+            <div className="acc-block">
+              <h3 className="mb-4 text-center text-dark">Login</h3>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  name="login_email"
+                  className="form-control mb-4"
+                  placeholder="Enter email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="password"
+                  name="login_password"
+                  className="form-control mb-4"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ backgroundColor: "#1D1D1D", border: "none" }}
+                >
+                  Login
+                </button>
+              </form>
+              <div className="divider">
+                <span className="divider-text">Sign up with</span>
               </div>
+
+              <div className="social-login-buttons flex gap-2 text-center">
+                <button className="btn btn-facebook">
+                  <a href="https://www.facebook.com/login.php/">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                </button>
+                <button className="btn btn-google">
+                  <a href="https://shorturl.at/efdR1">
+                    <img
+                      src="https://img.icons8.com/?size=96&id=17949&format=png"
+                      alt="google-icon"
+                      width="17"
+                      className="mb-1"
+                    />
+                  </a>
+                </button>
+                <button className="btn btn-apple">
+                  <i className="fab fa-apple"></i>
+                </button>
+              </div>
+              <p className="signin text-center pt-4">
+                Don't Have an account? <a href="sign-in.html">sign up</a>
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
