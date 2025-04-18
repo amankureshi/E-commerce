@@ -101,29 +101,27 @@ const Products = () => {
         </div>
         {filter.map((products) => {
           return (
-            <>
-              <div className="col-md-3 mb-4 col-lg-3 col-sm-6">
-                <div className="card h-100 text-center py-4" key={products.id}>
-                  <img
-                    src={products.image}
-                    className="card-img-top"
-                    alt={products.title}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">
-                      {products.title.substring(0, 12)}...
-                    </h5>
-                    <p className="card-text">${products.price}</p>
-                    <NavLink
-                      to={`/products/${products.id}`}
-                      className="btn btn-light"
-                    >
-                      Buy Now
-                    </NavLink>
-                  </div>
+            <div className="col-md-3 mb-4 col-lg-3 col-sm-6" key={products.id}>
+              <div className="card h-100 text-center py-4">
+                <img
+                  src={products.image}
+                  className="card-img-top"
+                  alt={products.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title mb-0">
+                    {products.title.substring(0, 12)}...
+                  </h5>
+                  <p className="card-text">${products.price}</p>
+                  <NavLink
+                    to={`/products/${products.id}`}
+                    className="btn btn-light"
+                  >
+                    Buy Now
+                  </NavLink>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </>

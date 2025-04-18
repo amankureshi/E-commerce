@@ -48,7 +48,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link " aria-current="page">
+                <NavLink
+                  className="nav-link "
+                  aria-current="page"
+                  to="/Contact"
+                >
                   Contact us
                 </NavLink>
               </li>

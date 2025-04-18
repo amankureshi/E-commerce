@@ -39,7 +39,6 @@ const Product_card = () => {
           <Skeleton height={150} />
           <div className="d-flex gap-2">
             <Skeleton height={50} width={100} />
-            <Skeleton height={50} width={100} />
           </div>
         </div>
       </>
@@ -73,12 +72,6 @@ const Product_card = () => {
               >
                 Add to Cart
               </button>
-              <NavLink
-                to="/cart"
-                className="btn btn-dark text-white px-4 py-2 product-btn"
-              >
-                Go to Cart
-              </NavLink>
             </div>
           </div>
         </div>
